@@ -1,8 +1,161 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+.NanumGothic{
+  font-family: 'Nanum Gothic Coding', serif;
 }
 
-a {
-  color: #00B7FF;
+.NanumBrush{
+  font-family: 'Nanum Brush Script', serif;
+}
+
+.row {
+  margin-top:15px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+.no-margin{
+  margin:0;
+}
+
+.top-full-margin{
+  margin-top:15px;
+}
+
+.bottom-half-margin{
+  margin-bottom:7px;
+}
+
+.bottom-full-margin{
+  margin-bottom: 15px;
+}
+
+.left-full-margin{
+  margin-left:15px;
+}
+
+.left-half-margin{
+  margin-left:7px;
+}
+
+.right-full-margin{
+  margin-right:15px;
+}
+
+.right-half-margin{
+  margin-right:7px;
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+.block {
+  display:block;
+}
+
+.full-padding{
+  padding:15px;
+}
+
+.menu-name{
+  margin-left:15px;
+  margin-bottom: 15px;
+}
+
+.menu-name .name{
+  margin-right:7px;
+}
+
+.menu-info{
+}
+
+.menu-count{
+  margin-left:7px;
+  margin-right:7px;
+}
+
+.list-group-item .row-content .control{
+  position:absolute;
+  right:14px;
+  bottom:0;
+}
+
+.pull-left{
+  text-align: left;
+}
+
+.pull-right{
+  text-align: right;
+}
+
+.pull-center{
+  text-align: center;
+}
+
+.thumbnail img {
+  width:250px;
+  height:250px;
+}
+
+.thumbnail .caption h3{
+  text-align: center;
+}
+
+.navbar {
+  margin-bottom: 1px;
+}
+
+.bs-example {
+  margin-bottom: 20px;
+}
+
+.carousel-caption {
+  top: calc(50% - 20px);
+  bottom:auto;
+  padding: 0;
+  font-size:40px;
+}
+
+.option-block{
+  margin-bottom: 30px;
+}
+
+.fix{
+  position:fixed;
+}
+
+.right-conner-1{
+  bottom:5%;
+  right:5%;
+}
+
+.right-conner-2{
+  bottom:calc(5% + 65px);
+  right:5%;
+}
+
+.nav-top-fixed-body{
+  padding-top:70px;
+}
+
+@media screen and (min-width: 1px) and (max-width: 767px){
+  #columns[data-columns]::before {
+    content: '2 .col-xs-6';
+  }
+}
+@media screen and (min-width:768px) and (max-width: 991px){
+  #columns[data-columns]::before {
+    content: '3 .col-sm-4';
+  }
+}
+@media screen and (min-width:992px) and (max-width: 9999px){
+  #columns[data-columns]::before {
+    content: '4 .col-md-3';
+  }
 }
