@@ -1,6 +1,9 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 
+html, body{ height:100% }
+body { padding-top: 70px; }
+
 .NanumGothic{
   font-family: 'Nanum Gothic Coding', serif;
 }
@@ -61,6 +64,14 @@
 
 .full-padding{
   padding:15px;
+}
+
+.right-full-padding{
+    padding-right:15px;
+}
+
+.half-padding{
+    padding:7px;
 }
 
 .menu-name{
@@ -144,18 +155,55 @@
   padding-top:70px;
 }
 
-@media screen and (min-width: 1px) and (max-width: 767px){
-  #columns[data-columns]::before {
-    content: '2 .col-xs-6';
-  }
+.stopwatch .controls {
+  font-size: 12px;
 }
-@media screen and (min-width:768px) and (max-width: 991px){
-  #columns[data-columns]::before {
-    content: '3 .col-sm-4';
-  }
+
+/* I'd rather stick to CSS rather than JS  for styling */
+
+.stopwatch .controls button{
+  padding: 5px 15px;
+  background :#EEE;
+  border: 3px solid #06C;
+  border-radius: 5px
 }
-@media screen and (min-width:992px) and (max-width: 9999px){
-  #columns[data-columns]::before {
-    content: '4 .col-md-3';
-  }
+
+.stopwatch .time {
+  font-size: 150%;
+}
+
+.full-background{
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  font-family: Raleway;
+  background: url(../images/background.jpg) no-repeat fixed;
+  background-size: cover;
+  background-position: 50%;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.title{
+  position:absolute;
+  top:50%;
+  left:calc(50% + 100px);
+  text-align: center;
+}
+
+.title .font{
+  font-size: -webkit-xxx-large;
+  font-family: 'Rock Salt', cursive;
+}
+
+.Rock-Salt{
+    font-size: medium;
+  font-family: 'Rock Salt', cursive;
+}
+
+.left-nav{
+    height:100%;
+    background-color:#333;
+    color:white;
 }

@@ -11,29 +11,49 @@ app.config([
             .state('home', {
                 url: '/home',
                 templateUrl: '/home.html',
-                controller: 'MainCtrl',
-                resolve: {
-                    postPromise: ['hits', function(hits){
-                        return hits.getAll();
-                    }]
-                }
-            })
-            .state('login', {
-                url: '/login',
-                templateUrl: '/login.html',
-                controller: 'AuthCtrl',
+                controller: 'HomeCtrl',
                 onEnter: ['$state', 'auth', function($state, auth) {
                     if( auth.isLoggedIn()) {
-                        $state.go('home');
+                        $state.go('main');
                     }
                 }]
             })
-            .state('register', {
-                url: '/register',
-                templateUrl: '/register.html',
-                controller: 'AuthCtrl',
+            .state('main', {
+                url: '/main',
+                templateUrl: '/main.html',
+                controller: 'MainCtrl',
                 onEnter: ['$state', 'auth', function($state, auth) {
-                    if( auth.isLoggedIn()) {
+                    if( !auth.isLoggedIn()) {
+                        $state.go('home');
+                    }
+                }],
+                resolve: {
+                    post: ['trains', function(trains) {
+                        return trains.getAll();
+                    }]
+                }
+            })
+            .state('device', {
+                url: '/device',
+                templateUrl: '/device.html',
+                controller: 'DeviceCtrl',
+                onEnter: ['$state', 'auth', function($state, auth) {
+                    if( !auth.isLoggedIn()) {
+                        $state.go('home');
+                    }
+                }],
+                resolve: {
+                    post: ['devices', function(devices) {
+                        return devices.getAll();
+                    }]
+                }
+            })
+            .state('live', {
+                url: '/live/{id}',
+                templateUrl: '/live.html',
+                controller: 'LiveCtrl',
+                onEnter: ['$state', 'auth', function($state, auth) {
+                    if( !auth.isLoggedIn()) {
                         $state.go('home');
                     }
                 }]

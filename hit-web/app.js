@@ -7,6 +7,10 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 require('./models/Users');
+require('./models/Devices');
+require('./models/Events');
+require('./models/Trains');
+
 require('./config/passport');
 var passport = require('passport');
 
@@ -62,6 +66,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
